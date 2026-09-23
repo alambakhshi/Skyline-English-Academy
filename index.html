@@ -412,10 +412,7 @@
       (formspree.q = formspree.q || []).push(arguments);
     };
 
-  formspree('initForm', {
-    formElement: '#registration-form',
-    formId: 'mppwrjrp'
-  });
+
 <script>
   const form = document.querySelector('form');
 
@@ -429,7 +426,7 @@
     submitButton.textContent = 'Sending...';
 
     try {
-      const response = await fetch(form.action, {
+     const response = await fetch('https://formspree.io/f/mppwrjrp', {
         method: 'POST',
         body: new FormData(form),
         headers: {
