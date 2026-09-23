@@ -52,38 +52,8 @@ document.addEventListener("DOMContentLoaded", function () {
     updateHeaderShadow();
     window.addEventListener("scroll", updateHeaderShadow, { passive: true });
   }
-
-  /* ---- 3. Course "Learn More" buttons pre-fill the registration form ---- */
-  var courseLinks = document.querySelectorAll(".course-card__link");
-  var courseSelect = document.getElementById("course");
-
-  courseLinks.forEach(function (link) {
-    link.addEventListener("click", function () {
-      var courseName = link.getAttribute("data-course");
-      if (courseSelect && courseName) {
-        courseSelect.value = courseName;
-      }
-    });
-  });
-
-  /* ---- 4. Registration form submit (placeholder — no backend yet) ---- */
-  var form = document.getElementById("registration-form");
-  var successMessage = document.getElementById("form-success");
-
-  if (form) {
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      // TODO (site owner): send `form` data to your backend or a form
-      // service (e.g. Formspree) here, then remove this placeholder block.
-
-      form.reset();
-      if (successMessage) {
-        successMessage.hidden = false;
-        successMessage.scrollIntoView({ behavior: "smooth", block: "nearest" });
-      }
-    });
-  }
+  /* ---- 4. Registration form ---- */
+  // Formspree handles the registration form submission.
 
   /* ---- 5. Footer year ---- */
   var yearEl = document.getElementById("year");
